@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+section{
+    padding: 20px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+/*********** Navbar ***********/
+#logo-navbar {
+    width: 30px !important;
+    transition:all 1s;
+}
+
+#logo-navbar:hover {
+    transform: scale(1.4);
+    transition: 1s;
+    z-index: 2;
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+}
+
+/*********** Page accueil ***********/
+#background-gradient {
+    background: linear-gradient(-45deg, #ee7752, #eb6864, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#titre-site {
+    font-family: "Pacifico", cursive !important;
+    color: floralwhite !important;
+    font-size: xxx-large;
+}
+
+#wilder-button:hover {
+    color: #ee7752;
+}
+
+#guest-button:hover {
+    color: #ee7752;
+}
+
+/********** Account Page *********/
+#left-info {
+    display: block;
+    height: 100%;
+}
+#right-info {
+    height: 100%;
+}
+.profile-picture img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    padding: 30px;
+}
+.button-dashboard {
+    height: 100%;
+}
+.button-dashboard:hover {
+    transition: all 300ms ease-in-out;
+    transform: scale(1.1);
+    color: white;
+}
+.box-dashboard {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+#button-info {
+    background-color: lightskyblue;
+}
+#button-skill {
+    background-color: plum;
+}
+#button-experience {
+    background-color: mediumslateblue;
+}
+#button-education {
+    background-color: salmon;
+}
+#button-project {
+    background-color: darkseagreen;
+}
+#button-cv {
+    background-color: #8AD13E !important;
+}
+/************Form**********/
+label.required:before {
+    content: "*";
+}
+
+
+/******* bouton adoption *******/
+#submit-info {
+    margin-top: 15px;
+}
+
+.form-switch {
+    padding-left: 1em !important;
+}
+
+/************All Wilders Page********/
+.card-img-wilder img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    width: 300px;
+    margin: auto;
+    display: block;
+}
+.pink-color {
+    color: #eb6864;
+}
+.title-name-card {
+    font-size: 22px;
+    font-weight: bold;
+}
+.border-card-wilder:hover {
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 25%), 0 6px 20px 0 rgb(0 0 0 / 25%) !important;
+}
+.click-send-email {
+    text-decoration: none;
+    font-size: 20px;
+}
+.icon-techno img {
+    width: 100%;
+}
+
+.card-img-wilder {
+    position: relative;
+}
+
+.wilder-picture {
+    display: block;
+}
+
+.wilder-picture-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-shadow: 2px 2px black;
+    font-family: "Pacifico", cursive;
+    font-size: xxx-large !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.wilder-picture-overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.wilder-picture-overlay:hover {
+    opacity: 1;
+}
+
+.wilder-picture-overlay > *:hover {
+    transform: translateY(0);
+}
+
+.wilder-picture-adopted {
+    font-weight: bold;
+}
+
+#not-adopted {
+    color: #8AD13E;
+}
+
+#adopted {
+    color: #eb6864;
+}
+
+/************ CV Page********/
+
+.background-cv{
+    padding: 30px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 25%), 0 6px 20px 0 rgb(0 0 0 / 25%)
+}
+.add-new-line{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.cv-name-title {
+    margin-left: 30px;
+}
+.cv-name-title h2 {
+    font-size: 40px;
+}
+.group-infos {
+    margin: 20px;
+    padding: 8px;
+    width: 300px;
+    min-height: 150px;
+    display: grid;
+    border-radius: 3px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    background-color: #aaa;
+    font-size: 15px;
+    height: fit-content;
+}
+
+.group-infos p, .group-infos a {
+    color: white;
+}
+.group-infos a {
+    text-decoration: none;
+}
+
+.card-content {
+    padding: 20px;
+    border: 1px dashed #fff;
+}
+
+.width-85 {
+    width: 85%;
+}
+.blue-color {
+    color: #8AD13E;
+}
+.ex-title-cv {
+    font-size: 20px;
+}
+.gray-color {
+    color: #404040;
+}
+.bg-blue {
+    background-color: #8AD13E;
+}
+.user-picture img {
+    border-radius: 50%;
+    width: 250px;
+    object-fit: cover;
+    height: 250px;
+}
+.logo-skill-cv img {
+    width: 100%;
+}
+.print-only {
+    display: none;
+}
+.background-cv {
+    width: 75% !important;
+}
+.img-project {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.techno-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.25s;
+    background-color: rgba(235, 104, 100, 0.8);
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px black;
+    display: flex;
+    align-items: center;
+}
+.techno-overlay:hover {
+    opacity: 1;
+}
+
+/************ about us page ********/
+.team4 h1, .team4 h2, .team4 h3, .team4 h4, .team4 h5 {
+    color: #eb6864;
+}
+
+.team4 .font-weight-medium {
+    font-weight: 500;
+}
+
+.team4 h5 {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.team4 .subtitle {
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.team4 ul li a {
+    color: #8d97ad;
+    padding-right: 15px;
+    -webkit-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
+}
+
+.team4 ul li a:hover {
+    -webkit-transform: translate3d(0px, -5px, 0px);
+    transform: translate3d(0px, -5px, 0px);
+    color: #316ce8;
+}
+
+img{
+    object-fit: cover;
+}
+
+.img-fluid {
+    max-width: 90% !important;
+    display: block;
+    margin: auto;
+}
+
+@media (max-width: 767px) {
+    .user-picture {
+        text-align: center !important;
+    }
+    .group-infos {
+        margin: auto;
+    }
+    .mt-sm-4 {
+        margin-top: 1.5rem !important;
+    }
+    .background-cv {
+        width: 90% !important;
+    }
+    .img-fluid {
+        max-width: 70% !important;
+    }
+    .small-d-none {
+        display: none;
+    }
+    .block-buttons {
+        margin-top: 20px !important;
+    }
+    .min-h-mobile {
+        min-height: 550px !important;
+    }
+}
+
+h2 {
+    font-family: "Pacifico", cursive !important;
+    margin-bottom: 20px !important;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .user-picture {
+        text-align: center !important;
+    }
+    .img-fluid {
+        max-width: 70% !important;
+    }
+    .block-buttons {
+        margin-top: 20px !important;
+    }
+    .min-h-mobile {
+        min-height: 550px !important;
+    }
+}
+
+img {
+    object-fit: cover;
+}

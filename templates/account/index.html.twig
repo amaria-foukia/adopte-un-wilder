@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="my-4">Bienvenue {{ app.user.firstname }} 😺</h1>
+        <div class="row">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <div class="col-lg-4 col-md-12">
+                <div class="row g-0 border rounded overflow-hidden mb-4 shadow-lg" id="left-info">
+                    <div class="profile-picture">
+                        <img src="/uploads/pictures/{{ app.user.pictureFilename ?? 'user.png' }}" alt="profile-picture">
+                    </div>
+                    <div class="col px-4 d-flex flex-column position-static">
+                        {% if app.user.labelCv %}
+                            <h3 class="mb-2 pink-color blue-color">{{ app.user.labelCv.title}}</h3>
+                        {% endif %}
+                        <p class="card-text mb-auto fs-4 pink-color">{{ app.user.firstname }} {{ app.user.lastname }}</p>
+                        <p class="card-text mb-auto fs-5"><i class="fas fa-envelope-open-text me-2"></i>{{ app.user.email }}</p>
+                        {% if app.user.telephone %}
+                            <p class="card-text mb-auto fs-5"><i class="fas fa-phone-square-alt me-2"></i>{{ app.user.telephone }}</p>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 block-buttons">
+                <div class="row g-0 border rounded overflow-hidden mb-4 shadow-lg p-5" id="right-info">
+                    <h2 class="">Gérer Mes Infos</h2>
+                    <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mb-3 text-center">
+                        <div class="col mb-3" >
+                            <a class="box-dashboard" href="{{ path('info_index') }}">
+                                <div class="card mb-4 rounded-3 shadow-lg button-dashboard " id="button-info">
+                                    <div class="card-body">
+                                        <i class="fas fa-2x fa-plus mt-5"></i>
+                                        <p class="mt-1">Infos</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col mb-3" >
+                            <a href="{{ path('skill_index') }}"  class="box-dashboard">
+                                <div class="card mb-4 rounded-3 shadow-lg button-dashboard" id="button-skill">
+                                    <div class="card-body">
+                                        <i class="fas fa-2x fa-plus mt-5"></i>
+                                        <p class="mt-1">Compétences</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col mb-3">
+                            <a href="{{ path("experience_index") }}" class="box-dashboard">
+                                 <div class="card mb-4 rounded-3 shadow-lg button-dashboard" id="button-experience">
+                                    <div class="card-body">
+                                        <i class="fas fa-2x fa-plus mt-5"></i>
+                                        <p class="mt-1">Experiences</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col mb-3">
+                            <a href="{{ path('education_index') }}"  class="box-dashboard">
+                                <div class="card mb-4 rounded-3 shadow-lg button-dashboard" id="button-education">
+                                    <div class="card-body">
+                                        <i class="fas fa-2x fa-plus mt-5"></i>
+                                        <p class="mt-1">Formations</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col mb-3">
+                            <a href="{{ path('project_index') }}"  class="box-dashboard">
+                                <div class="card mb-4 rounded-3 shadow-lg button-dashboard" id="button-project">
+                                    <div class="card-body">
+                                        <i class="fas fa-2x fa-plus mt-5"></i>
+                                        <p class="mt-1">Projets</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col mb-3">
+                            <a href="{{ path('wilder_show', {slug: app.user.slug}) }}" class="box-dashboard">
+                                <div class="card mb-4 rounded-3 shadow-lg button-dashboard bg-secondary" id="button-cv">
+                                    <div class="card-body">
+                                        <i class="fas fa-2x fa-eye mt-5"></i>
+                                        <p class="mt-1">Mon CV</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

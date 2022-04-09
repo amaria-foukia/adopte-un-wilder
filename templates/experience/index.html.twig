@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes expériences{% endblock %}
+
+{% block body %}
+    <div class="container my-5 min-h-mobile" style="min-height: 400px">
+        <div class="table-experience">
+            <h2 class="text-center mb-4">Mes Expériences</h2>
+
+            {% if experiences %}
+                <div class="d-flex justify-content-between">
+                    <a href="{{ path('account') }}"><i class="fas fa-backward"></i> Retour au Dashboard</a>
+                    <a href="{{ path('experience_add') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Ajouter une expérience</a>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="align-middle" scope="col" style="width: auto">Année</th>
+                            <th class="align-middle" scope="col" style="width: auto">Poste</th>
+                            <th class="align-middle small-d-none" scope="col" style="width: auto">Entreprise</th>
+                            <th class="align-middle small-d-none" scope="col" style="width: auto">Ville</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for experience in experiences %}
+                    <tr>
+                        <td class="align-middle">{{ experience.year }}</td>
+                        <td class="align-middle">{{ experience.title }}</td>
+                        <td class="align-middle small-d-none">{{ experience.company }}</td>
+                        <td class="align-middle small-d-none">{{ experience.city }}</td>
+                        <td class="align-middle d-flex py-5" style="width: auto"><a class="btn btn-secondary px-3 mx-3" href="{{ path("experience_edit", {id: experience.id}) }}"><i class="far fa-edit"></i></a>
+                            {{ include('experience/_form_delete.html.twig') }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+
+                <div class="d-flex justify-content-around my-5">
+                    <a href="{{ path('experience_add') }}" class="btn btn-primary btn-lg"><i class="fas fa-plus"></i> Ajouter une expérience</a>
+                </div>
+
+                <a href="{{ path('account') }}" class=""><i class="fas fa-backward"></i> Retour au Dashboard</a>
+
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png"/>
+    <title>Bienvenue sur Adopte un Wilder</title>
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+
+<body id="background-gradient">
+    <div class="d-flex flex-column justify-content-center w-100 h-100">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+         <h1 class="fw-light text-white m-0 mb-4" id="titre-site">Adopte un Wilder</h1>
+            <img src="/assets/images/adopte-un-wilder-logo-blanc-removebg-preview.png" alt="logo-adopte-un-wilder-blanc">
+            <h5 class="fw-light text-white m-0 mt-4" id="home-page">— Je suis —</h5>
+
+            <div class="d-flex">
+                <div class="btn-toolbar mt-4 mx-5">
+                    {% if app.user %}
+                        <a href="{{ path('account') }}" class="btn btn-outline-light" id="wilder-button" aria-current="page">Un wilder</a>
+                    {% else %}
+                        <a href="{{ path('login') }}" class="btn btn-outline-light" id="wilder-button" aria-current="page">Un wilder</a>
+                    {% endif %}
+                </div>
+                <div class="btn-toolbar mt-4 mx-5">
+                    <a href="{{ path('wilder_index') }}" class="btn btn-outline-light" id="guest-button">Un visiteur</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
